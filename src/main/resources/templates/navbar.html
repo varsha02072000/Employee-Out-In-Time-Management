@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+ <head>
+  <script th:src='@{/JS/script.js}'></script>
+  <link th:href='@{/CSS/style.css}' rel='stylesheet'>
+  <link th:href='@{/CSS/bootstrap.min.css}' rel='stylesheet'>
+ </head>
+ <body bgcolor='cyan'>
+   <hr style='border:2px solid green'>
+    <nav class='navbar navbar-expand navbar-light bg-light'>
+     <ul class='nav nav-pills mx-auto'>
+      <li><a id="home" style='text-decoration: underline' class='nav-link la' href='/time-management/home'>Home</a>
+      <li><a id='add' style='text-decoration: underline' class='nav-link la' href='/time-management/employee/add'>Add employee</a>
+      <li><a id='out' style='text-decoration: underline' class='nav-link la' href='/time-management/outtime'>Time Out</a>
+      <li><a id='in' style='text-decoration: underline' class='nav-link la' href='/time-management/intime'>Time In</a>
+      <li><a id='date' style='text-decoration: underline' class='nav-link la' href='/time-management/report/datewise'>Date wise report</a>
+      <li><a id='emp' style='text-decoration: underline' class='nav-link la' href='/time-management/report/empwise'>Employee wise report</a>
+     </ul>
+    </nav>
+   <hr style='border:2px solid green'>
+ </body>
+</html>

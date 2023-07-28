@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org">
+ <div th:insert="navbar.html"></div>
+ <body onload='makeActive("date")'>
+ <div class='dvv'>
+     <label class='lahu' th:text='${"Report of date between "+date1+" and "+date2}'></label>
+  </div>
+  <div class='container'>
+   <div class='card col-md-12 mx-auto'>
+    <div class='card-body'>
+      <div class='dvv' th:if="${elist.empty}"> 
+      	<label class='la' style='color:red'>No employee was out between these dates</label>
+      </div>
+     <div class='table scrollit' th:if="${!elist.empty}">
+     <table class='table table-hover'>
+      <thead>
+       <tr>
+        <th class='las'>S.No</th><th class='las'>Employee id</th>
+        <th class='las'>Out Time</th><th class='las'>In Time</th>
+        <th class='las'>Total Time</th><th class='las'>Date</th>
+       </tr>
+      </thead>
+      <tbody>
+        <tr th:each="ti:${elist}">
+         <td>1</td>
+         <td><a th:href='@{../employee/details(eid=${ti.eid})}' th:text="${ti.eid}"></a></td>
+         <td th:text="${ti.outtime}"></td>
+         <td th:text="${ti.intime}"></td>
+         <td th:text="${ti.totaltime}"></td>
+         <td th:text="${ti.date}"></td>
+        </tr>
+      </tbody>
+     </table>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class='dvv'>
+	 <button class='btr' onclick='history.back()'>Back</button>
+  </div>
+ </body>
+</html>
